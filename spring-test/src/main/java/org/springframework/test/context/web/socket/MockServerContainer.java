@@ -1,11 +1,11 @@
 /*
- * Copyright 2002-2016 the original author or authors.
+ * Copyright 2002-2018 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,8 +30,7 @@ import javax.websocket.server.ServerContainer;
 import javax.websocket.server.ServerEndpointConfig;
 
 /**
- * Mock implementation of the {@link javax.websocket.server.ServerContainer}
- * interface.
+ * Mock implementation of the {@link javax.websocket.server.ServerContainer} interface.
  *
  * @author Sam Brannen
  * @since 4.3.1
@@ -47,7 +46,7 @@ class MockServerContainer implements ServerContainer {
 	private int defaultMaxTextMessageBufferSize;
 
 
-	// --- WebSocketContainer --------------------------------------------------
+	// WebSocketContainer
 
 	@Override
 	public long getDefaultAsyncSendTimeout() {
@@ -107,18 +106,21 @@ class MockServerContainer implements ServerContainer {
 	@Override
 	public Session connectToServer(Endpoint endpointInstance, ClientEndpointConfig cec, URI path)
 			throws DeploymentException, IOException {
+
 		throw new UnsupportedOperationException(
-			"MockServerContainer does not support connectToServer(Endpoint, ClientEndpointConfig, URI)");
+				"MockServerContainer does not support connectToServer(Endpoint, ClientEndpointConfig, URI)");
 	}
 
 	@Override
 	public Session connectToServer(Class<? extends Endpoint> endpointClass, ClientEndpointConfig cec, URI path)
 			throws DeploymentException, IOException {
+
 		throw new UnsupportedOperationException(
-			"MockServerContainer does not support connectToServer(Class, ClientEndpointConfig, URI)");
+				"MockServerContainer does not support connectToServer(Class, ClientEndpointConfig, URI)");
 	}
 
-	// --- ServerContainer -----------------------------------------------------
+
+	// ServerContainer
 
 	@Override
 	public void addEndpoint(Class<?> endpointClass) throws DeploymentException {
@@ -128,7 +130,7 @@ class MockServerContainer implements ServerContainer {
 	@Override
 	public void addEndpoint(ServerEndpointConfig serverConfig) throws DeploymentException {
 		throw new UnsupportedOperationException(
-			"MockServerContainer does not support addEndpoint(ServerEndpointConfig)");
+				"MockServerContainer does not support addEndpoint(ServerEndpointConfig)");
 	}
 
 }
